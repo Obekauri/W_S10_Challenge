@@ -23,7 +23,6 @@ export default function PizzaForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent default form submission behavior
-    console.log(event)
 
     // Initialize toppings array
     const toppings = [];

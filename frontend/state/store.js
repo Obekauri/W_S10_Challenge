@@ -11,10 +11,11 @@ export const resetStore = () => configureStore({
     [usersApi.reducerPath]: usersApi.reducer,
     // add your reducer(s) here
   },
-  middleware: getDefault => getDefault().concat(
+  middleware: getDefaultMiddleware => getDefaultMiddleware({
+    serializableCheck: false,  // Disable serializable check middleware
+  }).concat(
     usersApi.middleware,
-    // if using RTK Query for your networking: add your middleware here
-    // if using Redux Thunk for your networking: you can ignore this
+    // Add other middleware here if needed
   ),
 })
 
